@@ -1,0 +1,29 @@
+{
+  "name": "brazos-tranist-api",
+  "version": "1.1.0",
+  "description": "JS implementation of the Texas A&M Bus API",
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "types"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "node examples/example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maroon-Rides/brazos-tranist-api.git"
+  },
+  "author": "Maroon-Rides",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Maroon-Rides/brazos-tranist-api/issues"
+  },
+  "homepage": "https://github.com/Maroon-Rides/brazos-tranist-api#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  },
+  "types": "types/index.d.ts"
+}
