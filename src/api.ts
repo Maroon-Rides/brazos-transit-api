@@ -3,7 +3,7 @@
  * @param {string} auth Authentication to use for the request
  * @returns {string[]} list of route names ("01", "04", etc.)
  */
-export async function getBaseData(auth) {
+export async function getBaseData(auth: string) {
     var res = await fetch(`https://ridebtd.org/Services/JSONPRelay.svc/GetRoutesForMapWithScheduleWithEncodedLine?apiKey=${auth}&isDispatch=false`)
     
     return await res.json()
@@ -14,7 +14,7 @@ export async function getBaseData(auth) {
  * @param {string} auth authentication to use for the request
  * @returns list of all locations for buses that are active
 */
-export async function getVehicleLocations(auth) {
+export async function getVehicleLocations(auth: string) {
     var res = await fetch(`https://ridebtd.org/Services/JSONPRelay.svc/GetMapVehiclePoints?apiKey=${auth}&isPublicMap=true`)
     
     return await res.json()
@@ -26,7 +26,7 @@ export async function getVehicleLocations(auth) {
  * @param {string} auth authentication to use for the request
  * @returns list of stop times for the given routes
 */
-export async function getNextStopTimes(routes, auth) {
+export async function getNextStopTimes(routes: string[], auth: string) {
     var res = await fetch(`https://ridebtd.org/Services/JSONPRelay.svc/GetStopArrivalTimes?apiKey=${auth}&routeIds=${routes.join(",")}&version=2`)
     
     return await res.json()

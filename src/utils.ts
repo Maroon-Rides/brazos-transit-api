@@ -5,7 +5,7 @@ import moment from "moment";
  * @param {string} dateString - formatted as "/Date(1234)/"
  * @returns {moment.Moment | null} converted time
  */
-export function convertDateString(dateString) {
+export function convertDateString(dateString: string): moment.Moment | undefined {
     // Extract the timestamp from the string using a regular expression
     const match = dateString.match(/\/Date\((\d+)\)\//);
     
@@ -17,6 +17,5 @@ export function convertDateString(dateString) {
         return moment(timestamp);
     }
 
-    // Return null or handle the error as needed
-    return null;
+    return undefined;
 }

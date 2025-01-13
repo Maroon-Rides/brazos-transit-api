@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "target": "ES2019",
+      "module": "ESNext", // Use 'CommonJS' if targeting older systems
+      "declaration": true, // Generate .d.ts files
+      "outDir": "./dist", // Output directory
+      "strict": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true
+    },
+    "include": [
+      "src/**/*",
+    ],
+    "skipLibCheck": true,
+  }
