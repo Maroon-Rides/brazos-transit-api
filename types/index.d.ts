@@ -125,7 +125,7 @@ declare module 'brazos-transit-api' {
     /**
      * Get the currently active routes
      * @param {string} auth Authentication to use for the request
-     * @returns {Route[]} list of route names ("01", "04", etc.)
+     * @returns {Route[]} list of all active routes
      */
     export async function getBaseData(auth: string): Promise<Route[]> 
 
