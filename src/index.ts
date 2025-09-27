@@ -3,9 +3,9 @@ export {
 } from "./connection.js"
 
 export {
-    getBaseData,
-    getVehicleLocations,
-    getNextStopTimes,
+    getRoutes,
+    getMapVehicles,
+    getStopArrivalTimes,
     getAnnouncements
 } from "./api.js"
 
