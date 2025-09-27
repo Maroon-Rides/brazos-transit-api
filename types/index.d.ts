@@ -127,14 +127,14 @@ declare module 'brazos-transit-api' {
      * @param {string} auth Authentication to use for the request
      * @returns {Route[]} list of all active routes
      */
-    export async function getBaseData(auth: string): Promise<Route[]> 
+    export async function getRoutes(auth: string): Promise<Route[]> 
 
     /**
      * get a list of all locations for all buses that are active
      * @param {string} auth authentication to use for the request
-     * @returns {Vehicle[]} list of all locations for buses that are active
+     * @returns {Vehicle[]} list of all buses that are active
     */
-    export async function getVehicleLocations(auth: string): Promise<Vehicle[]>
+    export async function getMapVehicles(auth: string): Promise<Vehicle[]>
 
     /**
      * get the next stop times for a given route(s)
@@ -142,7 +142,7 @@ declare module 'brazos-transit-api' {
      * @param {string} auth authentication to use for the request
      * @returns {RouteStop[]} list of stop times for the given routes
     */
-    export async function getNextStopTimes(routes: string[], auth: string): Promise<RouteStop[]>
+    export async function getStopArrivalTimes(routes: string[], auth: string): Promise<RouteStop[]>
 
 
 
