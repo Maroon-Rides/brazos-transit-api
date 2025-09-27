@@ -125,14 +125,14 @@ declare module 'brazos-transit-api' {
     /**
      * Get the currently active routes
      * @param {string} auth Authentication to use for the request
-     * @returns {string[]} list of route names ("01", "04", etc.)
+     * @returns {Route[]} list of all active routes
      */
     export async function getBaseData(auth: string): Promise<Route[]> 
 
     /**
      * get a list of all locations for all buses that are active
      * @param {string} auth authentication to use for the request
-     * @returns list of all locations for buses that are active
+     * @returns {Vehicle[]} list of all locations for buses that are active
     */
     export async function getVehicleLocations(auth: string): Promise<Vehicle[]>
 
@@ -140,7 +140,7 @@ declare module 'brazos-transit-api' {
      * get the next stop times for a given route(s)
      * @param {string[]} routes route ids to get stop times for
      * @param {string} auth authentication to use for the request
-     * @returns list of stop times for the given routes
+     * @returns {RouteStop[]} list of stop times for the given routes
     */
     export async function getNextStopTimes(routes: string[], auth: string): Promise<RouteStop[]>
 
@@ -148,7 +148,7 @@ declare module 'brazos-transit-api' {
 
     /**
      * get the announcements for route changes
-     * @returns {Announcement[]} - list of announcements
+     * @returns {Announcement[]} list of announcements
     */
     export async function getAnnouncements(): Promise<Announcement[]>
 

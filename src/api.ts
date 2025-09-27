@@ -1,7 +1,7 @@
 /**
  * Get the currently active routes
  * @param {string} auth Authentication to use for the request
- * @returns {string[]} list of route names ("01", "04", etc.)
+ * @returns {Route[]} list of all active routes
  */
 export async function getBaseData(auth: string) {
     var res = await fetch(`https://ridebtd.org/Services/JSONPRelay.svc/GetRoutesForMapWithScheduleWithEncodedLine?apiKey=${auth}&isDispatch=false`)
@@ -12,7 +12,7 @@ export async function getBaseData(auth: string) {
 /**
  * get a list of all locations for all buses that are active
  * @param {string} auth authentication to use for the request
- * @returns list of all locations for buses that are active
+ * @returns {Vehicle[]} list of all locations for buses that are active
 */
 export async function getVehicleLocations(auth: string) {
     var res = await fetch(`https://ridebtd.org/Services/JSONPRelay.svc/GetMapVehiclePoints?apiKey=${auth}&isPublicMap=true`)
@@ -24,7 +24,7 @@ export async function getVehicleLocations(auth: string) {
  * get the next stop times for a given route(s)
  * @param {string[]} routes route ids to get stop times for
  * @param {string} auth authentication to use for the request
- * @returns list of stop times for the given routes
+ * @returns {RouteStop[]} list of stop times for the given routes
 */
 export async function getNextStopTimes(routes: string[], auth: string) {
     var res = await fetch(`https://ridebtd.org/Services/JSONPRelay.svc/GetStopArrivalTimes?apiKey=${auth}&routeIds=${routes.join(",")}&version=2`)
@@ -34,7 +34,7 @@ export async function getNextStopTimes(routes: string[], auth: string) {
 
 /**
  * get the announcements for route changes
- * @returns list of announcements
+ * @returns {Announcement[]} list of announcements
 */
 export async function getAnnouncements() {
     var res = await fetch("https://ridebtd.org/Services/JSONPRelay.svc/GetTwitterJSON")
