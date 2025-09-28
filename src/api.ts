@@ -21,6 +21,16 @@ export async function getMapVehicles(auth: string) {
 }
 
 /**
+ * get a list of the capacity information for all active buses
+ * @returns {VehicleCapacity[]} list of all capacity information for active buses
+*/
+export async function getVehicleCapacities() {
+    var res = await fetch('https://ridebtd.org/Services/JSONPRelay.svc/GetVehicleCapacities')
+
+    return await res.json()
+}
+
+/**
  * get the next stop times for a given route(s)
  * @param {string[]} routes route ids to get stop times for
  * @param {string} auth authentication to use for the request

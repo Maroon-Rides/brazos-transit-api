@@ -5,6 +5,7 @@ export {
 export {
     getRoutes,
     getMapVehicles,
+    getVehicleCapacities,
     getStopArrivalTimes,
     getAnnouncements
 } from "./api.js"

@@ -83,6 +83,13 @@ declare module 'brazos-transit-api' {
         VehicleID: number;
     }
 
+    export interface VehicleCapacity {
+        Capacity: number;
+        CurrentOccupation: number;
+        Percentage: number;
+        VehicleID: number;
+    }
+
     interface TimeEstimate {
         EstimateTime: string; 
         IsArriving: boolean;
@@ -135,6 +142,12 @@ declare module 'brazos-transit-api' {
      * @returns {Vehicle[]} list of all buses that are active
     */
     export async function getMapVehicles(auth: string): Promise<Vehicle[]>
+
+    /**
+     * get a list of the capacity information for all active buses
+     * @returns {VehicleCapacity[]} list of all capacity information for active buses
+    */
+    export async function getVehicleCapacities(): Promise<VehicleCapacity[]>
 
     /**
      * get the next stop times for a given route(s)
