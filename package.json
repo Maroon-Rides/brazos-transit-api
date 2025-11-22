@@ -1,6 +1,6 @@
 {
   "name": "brazos-transit-api",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "JS implementation of the Texas A&M Bus API",
   "main": "src/index.js",
   "files": [
